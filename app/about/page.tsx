@@ -71,8 +71,10 @@ export default function AboutPage() {
       {/* Mission & Vision / Why Msingi */}
       <section className="bg-stone-50/50 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-12 items-start">
-            <div className="lg:col-span-5 sticky top-28 space-y-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-16 items-start relative">
+            
+            {/* Left Column: Title & Description (Sticky only on desktop lg+) */}
+            <div className="w-full lg:col-span-5 lg:sticky lg:top-28 space-y-8 z-10">
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
                   Why Msingi Exists
@@ -97,7 +99,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 space-y-8">
+            {/* Right Column: Feature Cards */}
+            <div className="w-full lg:col-span-7 space-y-8">
               <div className="rounded-3xl border border-stone-200/80 bg-white p-8 md:p-10 shadow-sm transition-all hover:border-emerald-500/40">
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 font-semibold mb-6">
                   01
@@ -128,6 +131,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
