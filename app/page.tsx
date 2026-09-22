@@ -61,14 +61,19 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative border-b border-stone-200 bg-white overflow-hidden">
+        {/* Editorial top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-600/40 to-transparent" />
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid min-h-[660px] items-center py-20 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                Digital learning platform
-              </p>
+              <div className="inline-flex items-center gap-3 border-b border-emerald-800/20 pb-1">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-800">
+                  Digital learning platform
+                </span>
+              </div>
 
-              <h1 className="mt-7 max-w-5xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-stone-950 md:text-7xl lg:text-[80px]">
+              <h1 className="mt-8 max-w-5xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-stone-950 md:text-7xl lg:text-[80px]">
                 A better
                 <br />
                 foundation
@@ -76,7 +81,7 @@ export default function HomePage() {
                 for <span className="text-emerald-800">learning.</span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-stone-600">
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-stone-600 font-light">
                 Msingi brings learning materials, activities and curriculum-aligned
                 resources together in one structured environment for learners and the
                 people supporting them.
@@ -85,15 +90,15 @@ export default function HomePage() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Link
                   href="/learning-areas"
-                  className="inline-flex items-center gap-2 bg-emerald-950 px-7 py-4 text-sm font-semibold text-white transition-all hover:bg-emerald-800 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-emerald-950 px-7 py-4 text-sm font-medium text-white transition-all hover:bg-emerald-800 shadow-sm"
                 >
                   <span>Explore learning areas</span>
-                  <span>&rarr;</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </Link>
 
                 <Link
                   href="/resources"
-                  className="inline-flex items-center gap-2 border border-stone-300 px-7 py-4 text-sm font-semibold text-stone-900 transition-colors hover:border-emerald-700 hover:text-emerald-800 bg-white"
+                  className="inline-flex items-center gap-2 border border-stone-300 px-7 py-4 text-sm font-medium text-stone-900 transition-all hover:border-stone-950 hover:bg-stone-50 bg-white"
                 >
                   Browse resources
                 </Link>
@@ -101,8 +106,8 @@ export default function HomePage() {
             </div>
 
             <div className="mt-16 lg:col-span-4 lg:mt-0">
-              <div className="border-l border-emerald-900/15 pl-8">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
+              <div className="relative border-l border-stone-300 pl-8 transition-all hover:border-emerald-700">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
                   The platform objective
                 </p>
 
@@ -110,13 +115,13 @@ export default function HomePage() {
                   Learning should make <span className="text-emerald-800">knowledge useful.</span>
                 </p>
 
-                <p className="mt-6 text-sm leading-7 text-stone-600">
+                <p className="mt-6 text-sm leading-7 text-stone-600 font-light">
                   Study concepts, practise skills and apply what you know in
                   ways that support academic excellence and long-term growth.
                 </p>
 
                 <div className="mt-10 border-t border-stone-200 pt-5">
-                  <span className="text-xs font-medium text-emerald-800/90">
+                  <span className="text-xs font-mono tracking-wider text-stone-400 uppercase">
                     Knowledge / Practice / Application
                   </span>
                 </div>
@@ -159,7 +164,7 @@ export default function HomePage() {
                 you want to learn.
               </h2>
 
-              <p className="mt-6 max-w-sm text-sm leading-7 text-stone-600">
+              <p className="mt-6 max-w-sm text-sm leading-7 text-stone-600 font-light">
                 Content is organised around core academic disciplines,
                 empowering learners to move smoothly from foundational theory
                 to practical real-world application.
@@ -167,10 +172,10 @@ export default function HomePage() {
 
               <Link
                 href="/learning-areas"
-                className="mt-8 inline-flex items-center gap-2 border-b border-emerald-900 pb-1 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700"
+                className="group mt-8 inline-flex items-center gap-2 border-b border-emerald-900 pb-1 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700"
               >
                 <span>View all learning areas</span>
-                <span>&rarr;</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </Link>
             </div>
 
@@ -180,7 +185,7 @@ export default function HomePage() {
                   <Link
                     key={area.title}
                     href={area.href}
-                    className="group grid gap-6 border-b border-stone-300 py-9 transition-colors hover:bg-white px-4 md:grid-cols-12 md:items-center"
+                    className="group grid gap-6 border-b border-stone-300 py-9 transition-all hover:bg-white hover:px-6 px-4 md:grid-cols-12 md:items-center"
                   >
                     <div className="md:col-span-2">
                       <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
@@ -193,14 +198,14 @@ export default function HomePage() {
                         {area.title}
                       </h3>
 
-                      <p className="mt-3 max-w-xl text-sm leading-7 text-stone-600">
+                      <p className="mt-3 max-w-xl text-sm leading-7 text-stone-600 font-light">
                         {area.description}
                       </p>
                     </div>
 
                     <div className="flex justify-start md:col-span-3 md:justify-end">
                       <span className="text-sm font-semibold text-stone-400 transition-all group-hover:text-emerald-700 flex items-center gap-1">
-                        Explore <span>&rarr;</span>
+                        Explore <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                       </span>
                     </div>
                   </Link>
@@ -217,11 +222,11 @@ export default function HomePage() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
             Educator perspective
           </p>
-          <blockquote className="mt-8 text-2xl font-medium leading-relaxed tracking-[-0.02em] text-stone-900 md:text-4xl">
+          <blockquote className="mt-8 text-2xl font-medium leading-relaxed tracking-[-0.02em] text-stone-900 md:text-4xl font-light">
             &ldquo;Msingi bridges the gap between classroom theory and actionable skill development. It gives learners the structure they need to truly grasp concepts instead of just memorising facts.&rdquo;
           </blockquote>
           <div className="mt-8 flex items-center justify-center space-x-3">
-            <div className="h-10 w-10 rounded-full bg-emerald-900 flex items-center justify-center text-white font-bold text-sm">
+            <div className="h-10 w-10 rounded-full bg-emerald-900 flex items-center justify-center text-white font-bold text-sm shadow-sm">
               M
             </div>
             <div className="text-left">
@@ -245,7 +250,7 @@ export default function HomePage() {
                 Education, technology and stories worth following.
               </h2>
 
-              <p className="mt-5 text-base leading-7 text-stone-600">
+              <p className="mt-5 text-base leading-7 text-stone-600 font-light">
                 Explore ideas and stories connecting learning with modern education,
                 technology and the wider world.
               </p>
@@ -253,10 +258,10 @@ export default function HomePage() {
 
             <Link
               href="/stories"
-              className="inline-flex items-center gap-2 border-b border-emerald-900 pb-1 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700"
+              className="group inline-flex items-center gap-2 border-b border-emerald-900 pb-1 text-sm font-semibold text-emerald-900 transition-colors hover:text-emerald-700"
             >
               <span>View all stories</span>
-              <span>&rarr;</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
             </Link>
           </div>
 
@@ -277,7 +282,7 @@ export default function HomePage() {
                     memorisation.
                   </h3>
 
-                  <p className="mt-6 max-w-xl text-sm leading-7 text-stone-300">
+                  <p className="mt-6 max-w-xl text-sm leading-7 text-stone-300 font-light">
                     Explore how practical learning, critical reasoning and core
                     competencies help learners build lifelong capabilities.
                   </p>
@@ -285,7 +290,7 @@ export default function HomePage() {
 
                 <div className="border-t border-emerald-900/60 pt-6 text-sm font-semibold text-emerald-300 group-hover:text-white transition-colors flex items-center gap-2">
                   <span>Read story</span>
-                  <span>&rarr;</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </div>
               </div>
             </Link>
@@ -303,13 +308,13 @@ export default function HomePage() {
                   Technology shaping the next generation.
                 </h3>
 
-                <p className="mt-5 text-sm leading-7 text-stone-600">
+                <p className="mt-5 text-sm leading-7 text-stone-600 font-light">
                   Developments and innovations changing how people learn, work
                   and solve problems.
                 </p>
 
                 <div className="mt-10 border-t border-stone-200 pt-5 text-sm font-semibold text-stone-400 group-hover:text-emerald-700 flex items-center gap-1">
-                  <span>Read story</span> <span>&rarr;</span>
+                  <span>Read story</span> <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </div>
               </Link>
 
@@ -325,13 +330,13 @@ export default function HomePage() {
                   Young people building with technology.
                 </h3>
 
-                <p className="mt-5 text-sm leading-7 text-stone-600">
+                <p className="mt-5 text-sm leading-7 text-stone-600 font-light">
                   Stories of learners turning curiosity into projects,
                   experiments and practical solutions.
                 </p>
 
                 <div className="mt-10 border-t border-stone-200 pt-5 text-sm font-semibold text-stone-400 group-hover:text-emerald-700 flex items-center gap-1">
-                  <span>Read story</span> <span>&rarr;</span>
+                  <span>Read story</span> <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </div>
               </Link>
             </div>
@@ -351,7 +356,7 @@ export default function HomePage() {
               Understand it. Work with it. Use it.
             </h2>
 
-            <p className="mt-5 text-base leading-7 text-stone-600">
+            <p className="mt-5 text-base leading-7 text-stone-600 font-light">
               Good learning is more than reading information. Msingi gives
               learners room to understand ideas, practise them and apply them directly.
             </p>
@@ -364,7 +369,7 @@ export default function HomePage() {
                 className="grid gap-6 border-b border-stone-300 py-10 md:grid-cols-12 md:items-start group transition-colors hover:bg-stone-50/50 px-4"
               >
                 <div className="md:col-span-2">
-                  <span className="text-xs font-semibold text-emerald-700">
+                  <span className="text-xs font-semibold text-emerald-700 font-mono">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -376,7 +381,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="md:col-span-6">
-                  <p className="max-w-xl text-sm leading-7 text-stone-600">
+                  <p className="max-w-xl text-sm leading-7 text-stone-600 font-light">
                     {item.description}
                   </p>
                 </div>
@@ -401,17 +406,17 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-4">
-              <p className="text-sm leading-7 text-stone-300">
+              <p className="text-sm leading-7 text-stone-300 font-light">
                 Explore learning areas and discover resources designed to
                 support understanding, structured practice and real-world application.
               </p>
 
               <Link
                 href="/learning-areas"
-                className="mt-7 inline-flex items-center gap-2 border border-emerald-700 bg-emerald-900 px-7 py-4 text-sm font-semibold text-white transition-all hover:bg-emerald-800 shadow-sm"
+                className="group mt-7 inline-flex items-center gap-2 border border-emerald-700 bg-emerald-900 px-7 py-4 text-sm font-semibold text-white transition-all hover:bg-emerald-800 shadow-sm"
               >
                 <span>Explore learning areas</span>
-                <span>&rarr;</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </Link>
             </div>
           </div>
